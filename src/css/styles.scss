@@ -1,0 +1,361 @@
+@import "./base/reset";
+@import "./base/fonts";
+@import "./base/variables";
+@import "./base/mixins";
+
+@import "../../icons/style.css";
+
+/*================= Body =================*/
+
+body {
+  background-color: $wit;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $wit;
+}
+
+/*================= Container =================*/
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/*================= Header =================*/
+
+.header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  // height: 135px;
+  /*================= Navigation =================*/
+  .nav {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 0;
+
+      &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .nav__logo__svg {
+          font-size: 65px;
+          color: $wit;
+          margin-right: 44px;
+        }
+        .nav__logo__text {
+          font-size: 34px;
+          font-weight: 400;
+          color: $wit;
+        }
+      }
+      &__links {
+        .list {
+          font-family: "Montserrat", sans-serif;
+          font-size: 14px;
+          font-weight: 300;
+          color: $wit;
+          text-decoration: none;
+          margin-left: 40px;
+          transition: 0.5s linear;
+
+          &--active {
+            color: $bruin;
+          }
+          &:hover {
+            color: $bruin;
+          }
+        }
+        .list:last-child {
+          margin-left: 100px;
+        }
+      }
+      .burger {
+        display: block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 50px;
+        font-weight: 300;
+        color: $wit;
+        text-decoration: none;
+        padding-right: 50px;
+      }
+    }
+  }
+}
+
+/*================= Banner =================*/
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 1024px;
+  background-image: url(../../img/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $imgBackground;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 570px;
+    margin: 0 auto;
+
+    &__subtitle {
+      font-family: "Raleway", sans-serif;
+      font-size: 36px;
+      font-weight: 500;
+      color: $wit;
+      margin-bottom: 12px;
+    }
+    &__title {
+      font-family: "Raleway", sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: $wit;
+      margin-bottom: 20px;
+    }
+    &__text {
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      color: $wit;
+      margin-bottom: 50px;
+    }
+    &__button {
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: $wit;
+      padding: 20px 50px;
+
+      text-decoration: none;
+      background-color: $bruin;
+      border-radius: 2px;
+      box-shadow: 0 3px $donkerbruin;
+      transition: 0.5s linear;
+
+      &:hover {
+        background-color: darken($color: $donkerbruin, $amount: 1);
+      }
+    }
+    &__left,
+    &__right {
+      position: absolute;
+      top: 40%;
+      z-index: 100;
+      color: $lichtgrijs;
+      font-size: 80px;
+      transition: 0.4s linear;
+    }
+    &__right {
+      right: -300px;
+      &:hover {
+        color: $grijs;
+      }
+    }
+    &__left {
+      left: -300px;
+      &:hover {
+        color: $grijs;
+      }
+    }
+  }
+  &__dots {
+    // margin-top: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+    left: 47%;
+
+    .dot {
+      height: 11px;
+      width: 11px;
+      margin-right: 10px;
+      background-color: rgba($color: $lichtgrijs, $alpha: 0.6);
+      border-radius: 50%;
+      display: inline-block;
+      transition: 0.6s linear;
+      &:hover {
+        background-color: rgba($color: $lichtgrijs, $alpha: 0.9);
+      }
+      &--active {
+        height: 15px;
+        width: 15px;
+        background-color: transparent;
+        border: 2px solid #d3c1ad;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+/*================= Footer =================*/
+
+.footer {
+  display: flex;
+  background-color: $wit;
+  padding: 80px 0;
+  &__cols {
+    width: 100%;
+    max-width: 270px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px;
+    transition: 0.8s linear;
+
+    &:hover {
+      border-right: 1px solid $bruin;
+      border-left: 1px solid $bruin;
+      transition: 0.8s linear;
+
+      .footer__cols__svg {
+        color: $bruin;
+      }
+      .footer__cols__title {
+        color: $bruin;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 70px;
+      padding-top: 30px;
+      border-bottom: 3px solid #f1eee9;
+    }
+
+    &__svg {
+      font-size: 50px;
+      color: $grijs;
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-family: "Raleway", sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: $grijs;
+      margin-bottom: 17px;
+    }
+    &__text {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: $lichtgrijs;
+    }
+  }
+  .cols--active {
+    .footer__cols__svg {
+      color: $bruin;
+    }
+    .footer__cols__title {
+      color: $bruin;
+    }
+
+    .footer__cols::after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 70px;
+      padding-top: 30px;
+      border-bottom: 3px solid $bruin;
+    }
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .nav__content__links {
+    display: none;
+  }
+  .burger {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    color: $wit;
+    text-decoration: none;
+    padding-right: 50px;
+    z-index: 1000;
+  }
+  .banner {
+    &__content {
+      &__subtitle {
+        font-size: 24px;
+      }
+      &__title {
+        font-size: 36px;
+      }
+      &__text {
+        font-size: 12px;
+      }
+
+      &__right {
+        right: -150px;
+        &:hover {
+          color: $grijs;
+        }
+      }
+      &__left {
+        left: -150px;
+        &:hover {
+          color: $grijs;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .burger {
+    display: block;
+  }
+  .banner {
+    &__content {
+      &__subtitle {
+        font-size: 16px;
+      }
+      &__title {
+        font-size: 24px;
+      }
+      &__text {
+        font-size: 10px;
+        margin: 20px;
+      }
+
+      &__right {
+        right: 0px;
+        font-size: 50px;
+        &:hover {
+          color: $grijs;
+        }
+      }
+      &__left {
+        left: 0px;
+        font-size: 50px;
+        &:hover {
+          color: $grijs;
+        }
+      }
+    }
+  }
+}
